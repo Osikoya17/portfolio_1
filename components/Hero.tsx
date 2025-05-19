@@ -36,7 +36,7 @@ const Hero = () => {
                 words={words}
             />
             <p className='text-center md:tracking-wider mb-4 text-sm md:text-md lg:text-2xl'>
-                Hi, I&apos;m Osikoya Olaoluwa, a Software Engineer  based in Nigeria
+                Hi, I&apos;m Osikoya Olaoluwa, a Software Engineer based in Nigeria
             </p>
 
             <a href="#about">
@@ -52,4 +52,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default Hero;
