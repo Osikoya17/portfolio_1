@@ -34,4 +34,18 @@
   .animate-spotlight {
     animation: var(--spotlight-animation);
   }
+
+  .heading {
+    font-weight: 700;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .heading {
+      font-size: 2.75rem;
+      line-height: 3.25rem;
+    }
+  }
 }

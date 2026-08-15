@@ -8,7 +8,7 @@ import { FaLocationArrow } from 'react-icons/fa6'
 const Hero = () => {
     const words = "Transformative Web Experiences with Next.js and Tailwind CSS"
   return (
-    <div className='pb-10 pt-36'>
+    <div id='home' className='pb-10 pt-36'>
         <div>
             <Spotlight className='-top-40 -left-10 md:-left-32 md:-top-20 h-screen' fill='white' />
             <Spotlight className='top-10 left-full h-[80vh] w-[50vw]' fill='purple' />
