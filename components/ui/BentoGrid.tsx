@@ -1,3 +1,6 @@
+"use client";
+import React from "react";
+import { motion } from "motion/react";
 import { cn } from "@/utils/cn";
 
 export const BentoGrid = ({
@@ -10,7 +13,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "mx-auto grid max-w-7xl grid-cols-1 gap-4 md:auto-rows-[18rem] md:grid-cols-3",
+        "mx-auto grid max-w-5xl grid-cols-1 gap-4 md:auto-rows-[18rem] md:grid-cols-3",
         className,
       )}
     >
@@ -21,36 +24,30 @@ export const BentoGrid = ({
 
 export const BentoGridItem = ({
   className,
-  title,
-  description,
-  header,
-  icon,
-  id,
+  children,
+  index = 0,
 }: {
   className?: string;
-  title?: string | React.ReactNode;
-  description?: string | React.ReactNode;
-  header?: React.ReactNode;
-  icon?: React.ReactNode;
-  id: string | number;
+  children?: React.ReactNode;
+  index?: number;
 }) => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        "group/bento relative shadow-input row-span-1 flex flex-col justify-between space-y-4 rounded-3xl border border-neutral-200 bg-white p-4 transition duration-200 hover:shadow-xl dark:border-white/[0.2] dark:bg-black dark:shadow-none",
+        "group/bento relative row-span-1 flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-black-200 p-6 backdrop-blur-sm transition-colors duration-300 hover:border-white/25",
         className,
       )}
     >
-      {header}
-      <div className="transition duration-200 group-hover/bento:translate-x-2">
-        {icon}
-        <div className="mt-2 mb-2 font-sans font-bold text-neutral-600 dark:text-neutral-200">
-          {title}
-        </div>
-        <div className="font-sans text-xs font-normal text-neutral-600 dark:text-neutral-300">
-          {description}
-        </div>
-      </div>
-    </div>
+      {/* Soft purple bloom that intensifies on hover */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 -bottom-1/2 h-full opacity-50 transition-opacity duration-300 group-hover/bento:opacity-100 [background:radial-gradient(50%_60%_at_50%_100%,rgba(203,172,249,0.12),transparent)]"
+      />
+      <div className="relative z-10 flex h-full flex-col">{children}</div>
+    </motion.div>
   );
 };
