@@ -136,7 +136,7 @@ const RecentProjects = () => {
         </h2>
         <p className="mt-4 text-sm text-neutral-400 md:text-base">
           Projects where I got to design, build, and ship from immersive UIs to
-          full-stack apps.
+          web apps.
         </p>
       </div>
 
