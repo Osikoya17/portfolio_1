@@ -236,7 +236,7 @@ export type SocialMedia = {
 
 export const socialMedia: SocialMedia[] = [
   { id: 1, name: "GitHub", icon: FaGithub, link: "https://github.com/osikoya17" },
-  { id: 2, name: "LinkedIn", icon: FaLinkedin, link: "https://linkedin.com/in/osikoyaolaoluwa" },
-  { id: 3, name: "X", icon: FaXTwitter, link: "https://x.com/osikoyaolaoluwa" },
+  { id: 2, name: "LinkedIn", icon: FaLinkedin, link: "https://linkedin.com/in/olaoluwa-osikoya" },
+  { id: 3, name: "X", icon: FaXTwitter, link: "https://x.com/_Kyosi" },
   { id: 4, name: "Email", icon: FaEnvelope, link: "mailto:olaoluwaosikoya2021@gmail.com" },
 ];
