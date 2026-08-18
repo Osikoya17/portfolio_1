@@ -8,14 +8,18 @@ export const TextGenerateEffect = ({
   className,
   filter = true,
   duration = 0.5,
+  highlightFrom = 4,
 }: {
   words: string;
   className?: string;
   filter?: boolean;
   duration?: number;
+  /** Word index (0-based) from which words render in the accent color. */
+  highlightFrom?: number;
 }) => {
   const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
+  const wordsArray = words.split(" ");
+
   useEffect(() => {
     animate(
       "span",
@@ -25,7 +29,7 @@ export const TextGenerateEffect = ({
       },
       {
         duration: duration ? duration : 1,
-        delay: stagger(0.2),
+        delay: stagger(0.15),
       }
     );
   }, [scope.current]);
@@ -33,29 +37,28 @@ export const TextGenerateEffect = ({
   const renderWords = () => {
     return (
       <motion.div ref={scope}>
-        {wordsArray.map((word, idx) => {
-          return (
-            <motion.span
-              key={word + idx}
-              className={`${idx > 3 ? "text-purple" : "dark:text-white text-black"} opacity-0`}
-              style={{
-                filter: filter ? "blur(10px)" : "none",
-              }}
-            >
-              {word}{" "}
-            </motion.span>
-          );
-        })}
+        {wordsArray.map((word, idx) => (
+          <motion.span
+            key={word + idx}
+            className={cn(
+              "opacity-0",
+              idx >= highlightFrom ? "text-purple" : "text-white"
+            )}
+            style={{
+              filter: filter ? "blur(10px)" : "none",
+            }}
+          >
+            {word}{" "}
+          </motion.span>
+        ))}
       </motion.div>
     );
   };
 
   return (
     <div className={cn("font-bold", className)}>
-      <div className="my-4">
-        <div className=" dark:text-white text-black  leading-snug tracking-wide">
-          {renderWords()}
-        </div>
+      <div className="leading-[1.15] tracking-tight text-white">
+        {renderWords()}
       </div>
     </div>
   );

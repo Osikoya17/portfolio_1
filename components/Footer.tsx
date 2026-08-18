@@ -7,33 +7,33 @@ const Footer = () => {
   return (
     <footer id='contact' className='relative py-20'>
         <div
+            aria-hidden
             className={cn(
                 'absolute inset-0 -z-10',
                 '[background-size:20px_20px]',
-                '[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]',
-                'dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]',
+                '[background-image:radial-gradient(#404040_1px,transparent_1px)]',
                 '[mask-image:radial-gradient(ellipse_at_center,black_10%,transparent_70%)]',
             )}
         />
 
-        <div className='flex flex-col items-center text-center max-w-2xl mx-auto'>
-            <h2 className='heading'>
+        <div className='mx-auto flex max-w-2xl flex-col items-center text-center'>
+            <h2 className='heading text-white'>
                 Ready to take your <span className='text-purple'>digital presence</span> to the next level?
             </h2>
-            <p className='text-sm md:text-base text-neutral-600 dark:text-neutral-300 mt-4'>
+            <p className='mt-4 text-sm text-neutral-300 md:text-base'>
                 Reach out and let&apos;s talk about how we can work together.
             </p>
 
-            <a href='mailto:adeyinkaoluwatosin123@gmail.com' className='mt-6'>
-                <MagicButton
-                    title="Let's get in touch"
-                    icon={<FaLocationArrow />}
-                    position='right'
-                />
-            </a>
+            <MagicButton
+                title="Let's get in touch"
+                icon={<FaLocationArrow />}
+                position='right'
+                href='mailto:olaoluwaosikoya2021@gmail.com'
+                className='mt-6'
+            />
         </div>
 
-        <div className='flex items-center justify-center gap-6 mt-14'>
+        <div className='mt-14 flex items-center justify-center gap-6'>
             {socialMedia.map(({ id, name, icon: Icon, link }) => (
                 <a
                     key={id}
@@ -41,14 +41,14 @@ const Footer = () => {
                     target='_blank'
                     rel='noopener noreferrer'
                     aria-label={name}
-                    className='flex h-11 w-11 items-center justify-center rounded-lg border border-neutral-200 bg-white text-neutral-600 transition hover:-translate-y-1 dark:border-white/[0.2] dark:bg-black-200 dark:text-neutral-300'
+                    className='flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white-200 backdrop-blur-sm transition hover:-translate-y-1 hover:border-white/30 hover:text-white'
                 >
                     <Icon className='text-lg' />
                 </a>
             ))}
         </div>
 
-        <p className='text-center text-xs text-neutral-500 dark:text-neutral-400 mt-10'>
+        <p className='mt-10 text-center text-xs text-neutral-400'>
             &copy; {new Date().getFullYear()} Olaoluwa David Osikoya. All rights reserved.
         </p>
     </footer>
