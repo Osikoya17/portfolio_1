@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import { motion } from 'motion/react'
-import { projects } from '@/data'
+import { projects, getTechColor } from '@/data'
 import type { Project } from '@/data'
 import { FaArrowUpRightFromSquare, FaGithub } from 'react-icons/fa6'
 
@@ -87,7 +87,8 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             {project.techIcons.map((Icon, i) => (
               <span
                 key={i}
-                className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-sm text-white-200"
+                style={{ '--brand': getTechColor(Icon) } as React.CSSProperties}
+                className="tech-chip flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/[0.03] text-sm text-white-200"
               >
                 <Icon />
               </span>

@@ -20,6 +20,31 @@ import {
 
 // NOTE: This is placeholder content. Swap it out for your real details.
 
+// Official brand color for each tech icon, used for the on-hover glow.
+// Pure-black brand marks (Next.js, Express, Socket.io) map to white so the
+// glow stays visible on the dark UI — which is how those logos render on dark.
+const techColors = new Map<IconType, string>([
+  [SiReact, "#61DAFB"],
+  [SiNextdotjs, "#FFFFFF"],
+  [SiTypescript, "#3178C6"],
+  [SiJavascript, "#F7DF1E"],
+  [SiVite, "#646CFF"],
+  [SiTailwindcss, "#06B6D4"],
+  [SiNodedotjs, "#5FA04E"],
+  [SiExpress, "#FFFFFF"],
+  [SiMongodb, "#47A248"],
+  [SiPostgresql, "#4169E1"],
+  [SiDocker, "#2496ED"],
+  [SiGit, "#F05032"],
+  [SiFigma, "#F24E1E"],
+  [SiSocketdotio, "#FFFFFF"],
+  [SiStripe, "#635BFF"],
+]);
+
+// Falls back to the theme accent for any icon without a mapped brand color.
+export const getTechColor = (icon: IconType): string =>
+  techColors.get(icon) ?? "#CBACF9";
+
 export const navItems = [
   { name: "Home", link: "#home", icon: FaHouse },
   { name: "About", link: "#about", icon: FaUser },

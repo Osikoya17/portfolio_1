@@ -24,13 +24,13 @@ const Footer = () => {
                 Reach out and let&apos;s talk about how we can work together.
             </p>
 
-            <MagicButton
+            {/* <MagicButton
                 title="Let's get in touch"
                 icon={<FaLocationArrow />}
                 position='right'
                 href='mailto:olaoluwaosikoya2021@gmail.com'
                 className='mt-6'
-            />
+            /> */}
         </div>
 
         <div className='mt-14 flex items-center justify-center gap-6'>

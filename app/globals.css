@@ -48,4 +48,27 @@
       line-height: 3.25rem;
     }
   }
+
+  /* Tech icon chips: glow in each brand's real color on hover.
+     The hex is passed per-chip via the inline `--brand` custom property. */
+  .tech-chip {
+    transition: color 0.2s ease, border-color 0.2s ease,
+      background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease,
+      translate 0.2s ease;
+  }
+
+  .tech-chip svg {
+    transition: filter 0.2s ease;
+  }
+
+  .tech-chip:hover {
+    color: var(--brand);
+    border-color: color-mix(in srgb, var(--brand) 50%, transparent);
+    background-color: color-mix(in srgb, var(--brand) 12%, transparent);
+    box-shadow: 0 0 20px -2px color-mix(in srgb, var(--brand) 55%, transparent);
+  }
+
+  .tech-chip:hover svg {
+    filter: drop-shadow(0 0 7px color-mix(in srgb, var(--brand) 65%, transparent));
+  }
 }

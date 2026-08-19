@@ -1,5 +1,5 @@
 import { BentoGrid, BentoGridItem } from './BentoGrid'
-import { gridItems } from '@/data'
+import { gridItems, getTechColor } from '@/data'
 import type { GridItem } from '@/data'
 import MagicButton from './MagicButton'
 import { ProfileAvatar } from './ProfileAvatar'
@@ -75,7 +75,8 @@ const CardContent = ({ item }: { item: GridItem }) => {
             {item.techIcons?.map((Icon, i) => (
               <div
                 key={i}
-                className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-xl text-white-200 transition duration-200 hover:-translate-y-1 hover:border-purple/40 hover:text-white"
+                style={{ '--brand': getTechColor(Icon) } as React.CSSProperties}
+                className="tech-chip flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-xl text-white-200 hover:-translate-y-1"
               >
                 <Icon />
               </div>
