@@ -16,12 +16,12 @@ const Footer = () => {
             )}
         />
 
-        <div className='mx-auto flex max-w-2xl flex-col items-center text-center'>
+        <div className='mx-auto flex max-w-5xl flex-col items-center text-center'>
             <h2 className='heading text-white'>
-                Ready to take your <span className='text-purple'>digital presence</span> to the next level?
+                Get <span className='text-purple'>in</span> touch
             </h2>
             <p className='mt-4 text-sm text-neutral-300 md:text-base'>
-                Reach out and let&apos;s talk about how we can work together.
+                {/* Reach out and let&apos;s talk about how we can work together. */}
             </p>
 
             {/* <MagicButton
@@ -33,7 +33,7 @@ const Footer = () => {
             /> */}
         </div>
 
-        <div className='mt-14 flex items-center justify-center gap-6'>
+        <div className='mt-2 flex items-center justify-center gap-6'>
             {socialMedia.map(({ id, name, icon: Icon, link }) => (
                 <a
                     key={id}
