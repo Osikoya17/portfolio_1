@@ -31,7 +31,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-[100svh] w-full flex-col items-center justify-center overflow-hidden pb-20 pt-28 md:pt-36"
+      className="relative flex min-h-[100svh] w-full flex-col items-center justify-center overflow-hidden pb-20 pt-16 md:pt-12"
     >
       {/* Spotlights */}
       <div aria-hidden className="pointer-events-none">
@@ -80,23 +80,23 @@ const Hero = () => {
         {/* Name / kicker */}
         <motion.p
           variants={item}
-          className="mt-6 text-sm uppercase tracking-[0.25em] text-white-200 md:text-base"
+          className="mt-7 text-sm uppercase tracking-[0.25em] text-white-200 md:text-base"
         >
           Hi, I&apos;m Osikoya Olaoluwa
         </motion.p>
 
         {/* Headline */}
-        <motion.div variants={item} className="mt-3">
+        <motion.div variants={item} className="mt-5">
           <TextGenerateEffect
             words={words}
-            className="text-center text-4xl md:text-5xl lg:text-6xl"
+            className="text-center text-4xl md:text-5xl lg:text-5xl"
           />
         </motion.div>
 
         {/* Supporting line */}
         <motion.p
           variants={item}
-          className="mt-6 max-w-2xl text-sm leading-relaxed text-white-200 md:text-lg"
+          className="mt-7 max-w-2xl text-sm leading-relaxed text-white-200 md:text-lg"
         >
           A frontend-focused software engineer based in Nigeria (WAT). I turn ideas
           into fast, accessible, and reliable products people love to use.
