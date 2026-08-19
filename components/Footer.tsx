@@ -21,7 +21,7 @@ const Footer = () => {
                 Get <span className='text-purple'>in</span> touch
             </h2>
             <p className='mt-4 text-sm text-neutral-300 md:text-base'>
-                {/* Reach out and let&apos;s talk about how we can work together. */}
+                For enquiries, collaboration requests or job opportunities
             </p>
 
             {/* <MagicButton
@@ -33,7 +33,7 @@ const Footer = () => {
             /> */}
         </div>
 
-        <div className='mt-2 flex items-center justify-center gap-6'>
+        <div className='mt-5 flex items-center justify-center gap-6'>
             {socialMedia.map(({ id, name, icon: Icon, link }) => (
                 <a
                     key={id}
