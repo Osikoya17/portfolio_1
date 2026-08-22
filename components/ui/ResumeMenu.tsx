@@ -55,7 +55,7 @@ export const ResumeMenu = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.96 }}
             transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute right-0 top-[calc(100%+0.6rem)] w-64 origin-top-right overflow-hidden rounded-2xl border border-white/10 bg-black-200/95 p-2 shadow-xl shadow-black/50 backdrop-blur-md"
+            className="absolute right-0 top-[calc(100%+0.6rem)] w-64 origin-top-right overflow-hidden rounded-2xl border border-white/10 bg-[rgba(17,25,40,0.97)] p-2 shadow-xl shadow-black/50 backdrop-blur-md"
           >
             {resumeVariants.map((r) => (
               <a
