@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
-import { FaDownload } from "react-icons/fa6";
 import { cn } from "@/utils/cn";
+import { ResumeMenu } from "./ResumeMenu";
 
 type NavItem = {
   name: string;
@@ -57,18 +57,7 @@ export const FloatingNav = ({
         </a>
       ))}
 
-      <a
-        href="/resume.pdf"
-        download="Osikoya-Olaoluwa-CV.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Download résumé (PDF)"
-        className="relative ml-1 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white transition-colors hover:border-purple/40 hover:bg-white/10"
-      >
-        <FaDownload className="text-xs text-purple" />
-        <span>Resume</span>
-        <span className="absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-gradient-to-r from-transparent via-purple to-transparent" />
-      </a>
+      <ResumeMenu />
     </motion.div>
   );
 };

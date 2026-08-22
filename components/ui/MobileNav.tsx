@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { FaBars, FaXmark, FaDownload } from "react-icons/fa6";
-import { cn } from "@/utils/cn";
+import { resumeVariants } from "@/data";
 
 type NavItem = {
   name: string;
@@ -102,17 +102,28 @@ export const MobileNav = ({
                 </a>
               ))}
 
-              <a
-                href="/resume.pdf"
-                download="Osikoya-Olaoluwa-CV.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={close}
-                className="mt-1 flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-3 text-sm font-medium text-white transition-colors hover:border-purple/40 hover:bg-white/10"
-              >
-                <FaDownload className="text-xs text-purple" />
-                <span>Resume</span>
-              </a>
+              {/* Résumé / CV variants */}
+              <div className="my-1 h-px bg-white/10" />
+              <p className="px-3 pb-1 pt-2 text-[11px] font-medium uppercase tracking-wider text-neutral-500">
+                Download CV
+              </p>
+              {resumeVariants.map((r) => (
+                <a
+                  key={r.id}
+                  href={r.file}
+                  download={r.downloadAs}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={close}
+                  className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm text-white-200 transition-colors hover:bg-white/5 hover:text-white"
+                >
+                  <FaDownload className="shrink-0 text-xs text-purple" />
+                  <span className="flex flex-col">
+                    <span className="text-white">{r.label}</span>
+                    <span className="text-xs text-neutral-400">{r.description}</span>
+                  </span>
+                </a>
+              ))}
             </motion.nav>
           </>
         )}

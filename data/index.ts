@@ -54,6 +54,39 @@ export const navItems = [
   { name: "Contact", link: "#contact", icon: FaEnvelope },
 ];
 
+export type ResumeVariant = {
+  id: string;
+  label: string;
+  description: string;
+  file: string; // path served from /public
+  downloadAs: string; // clean filename applied on download
+};
+
+// Downloadable CV variants offered by the nav "Resume" chooser.
+export const resumeVariants: ResumeVariant[] = [
+  {
+    id: "developer",
+    label: "Developer CV",
+    description: "Software engineering focus",
+    file: "/resume.pdf",
+    downloadAs: "Osikoya-Olaoluwa-Developer-CV.pdf",
+  },
+  {
+    id: "hybrid",
+    label: "Hybrid CV",
+    description: "Software + networking",
+    file: "/OSIKOYA_OLAOLUWA_DAVID_CV_Hybrid.pdf",
+    downloadAs: "Osikoya-Olaoluwa-Hybrid-CV.pdf",
+  },
+  {
+    id: "networking",
+    label: "Networking CV",
+    description: "CCNA / Network+ focus",
+    file: "/OSIKOYA_OLAOLUWA_DAVID_CV_Networking.docx.pdf",
+    downloadAs: "Osikoya-Olaoluwa-Networking-CV.pdf",
+  },
+];
+
 export type GridVariant =
   | "bio"
   | "location"
