@@ -16,6 +16,8 @@ import {
   SiSocketdotio,
   SiStripe,
   SiVite,
+  SiCisco,
+  SiComptia,
 } from "react-icons/si";
 
 // NOTE: This is placeholder content. Swap it out for your real details.
@@ -253,6 +255,45 @@ export const timeline: TimelineItem[] = [
     start: 2013,
     desc: "Completed secondary education with a strong foundation in science and mathematics, preparing for higher education in computer engineering.",
     skills: ["Mathematics", "Physics", "Chemistry","Computer Studies","etc."],
+  },
+];
+
+export type Certification = {
+  id: number;
+  name: string;
+  issuer: string;
+  icon: IconType;
+  color: string; // brand accent used for the icon + hover glow
+  description: string;
+  credentialUrl: string; // public Credly badge link
+  skills?: string[];
+};
+
+// TODO: Replace each `credentialUrl` with your real Credly public badge link.
+// On credly.com open the badge → Share → copy the public URL
+// (looks like https://www.credly.com/badges/<uuid>/public_url).
+export const certifications: Certification[] = [
+  {
+    id: 1,
+    name: "CCNA",
+    issuer: "Cisco",
+    icon: SiCisco,
+    color: "#049FD9",
+    description:
+      "Cisco Certified Network Associate — validates skills across network fundamentals, IP connectivity, routing & switching, security fundamentals, and automation.",
+    credentialUrl: "https://www.credly.com/badges/e36a6f4c-ec55-4a16-9d5a-bcb7cd9c61b0/public_url",
+    skills: ["Networking", "Routing & Switching", "IP Connectivity", "Network Security"],
+  },
+  {
+    id: 2,
+    name: "CompTIA Network+",
+    issuer: "CompTIA",
+    icon: SiComptia,
+    color: "#C8202F",
+    description:
+      "Validates the core skills to design, configure, manage, and troubleshoot wired and wireless networks across modern infrastructures.",
+    credentialUrl: "https://www.credly.com/badges/08d2c802-46cd-411e-b6d4-e7ae682b9f1c/public_url",
+    skills: ["Network Architecture", "Troubleshooting", "Network Security", "Operations"],
   },
 ];
 

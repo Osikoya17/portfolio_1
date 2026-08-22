@@ -4,6 +4,7 @@ import { MobileNav } from "@/components/ui/MobileNav";
 import Grid from "@/components/ui/Grid";
 import RecentProjects from "@/components/RecentProjects";
 import Experience from "@/components/Experience";
+import Certifications from "@/components/Certifications";
 import Footer from "@/components/Footer";
 import { navItems } from "@/data";
 
@@ -23,6 +24,7 @@ export default function Home() {
         <Grid />
         <RecentProjects />
         <Experience />
+        <Certifications />
         <Footer />
       </div>
     </main>
