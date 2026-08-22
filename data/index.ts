@@ -72,18 +72,18 @@ export const resumeVariants: ResumeVariant[] = [
     downloadAs: "Osikoya-Olaoluwa-Developer-CV.pdf",
   },
   {
-    id: "hybrid",
-    label: "Hybrid CV",
-    description: "Software + networking",
-    file: "/OSIKOYA_OLAOLUWA_DAVID_CV_Hybrid.pdf",
-    downloadAs: "Osikoya-Olaoluwa-Hybrid-CV.pdf",
-  },
-  {
     id: "networking",
     label: "Networking CV",
     description: "CCNA / Network+ focus",
     file: "/OSIKOYA_OLAOLUWA_DAVID_CV_Networking.docx.pdf",
     downloadAs: "Osikoya-Olaoluwa-Networking-CV.pdf",
+  },
+  {
+    id: "hybrid",
+    label: "Hybrid CV",
+    description: "Software + networking",
+    file: "/OSIKOYA_OLAOLUWA_DAVID_CV_Hybrid.pdf",
+    downloadAs: "Osikoya-Olaoluwa-Hybrid-CV.pdf",
   },
 ];
 
